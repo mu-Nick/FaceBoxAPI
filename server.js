@@ -11,12 +11,10 @@ const profile = require('./controllers/profile');
 
 
 const db = knex({
-  client: 'mysql2',
+  client: 'pg',
   connection: {
-    host : '127.0.0.1',
-    user : 'root',
-    password : 'NIck@5143',
-    database : 'face_recognition_db'
+    connectionString : process.env.DATABASE_URL,
+    ssl: true
   }
 });
 
